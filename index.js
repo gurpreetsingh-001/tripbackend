@@ -28,7 +28,7 @@ app.use('/packages', packageRoutes);
 app.use('/banners',bannerrouter);
 app.use('/bookings', bookingRoutes);
 
-app.use('/test',()=>{return res.send("Server is running")})
+app.use('/test',(req,res)=>{return res.send("Server is running")})
 
 morgan.token("body", (req) => {
     return JSON.stringify(req.body);
